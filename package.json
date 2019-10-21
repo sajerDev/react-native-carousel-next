@@ -1,0 +1,78 @@
+{
+  "name": "react-native-carousel-next",
+  "version": "0.0.1",
+  "description": "Modern carousel for React Native with infinite looping",
+  "main": "lib/module/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/src/index.d.ts",
+  "files": [
+    "lib",
+    "babel.js"
+  ],
+  "scripts": {
+    "prepare": "install-peers && bob build",
+    "typescript": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "prettier:c": "prettier --check 'src/**/*.{js,ts,tsx,json,md}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/sajerDev/react-native-carousel-next"
+  },
+  "keywords": [
+    "carousel",
+    "react",
+    "native",
+    "simple",
+    "carousel",
+    "react",
+    "native",
+    "image",
+    "slider"
+  ],
+  "author": "https://sajer.dev",
+  "license": "MIT",
+  "devDependencies": {
+    "@react-native-community/bob": "^0.7.0",
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-native": "^3.7.0",
+    "husky": ">=1",
+    "install-peers-cli": "^2.1.1",
+    "lint-staged": ">=8",
+    "typescript": "^3.6.4"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-native": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "@react-native-community/bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "module",
+      "typescript"
+    ],
+    "files": [
+      "src/"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
